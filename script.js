@@ -21,13 +21,3 @@ let loadUser =()=> {
 window.onload =()=> {
   loadUser()
 }
-
-// const dataWithAsync = async () => {
-//
-//         let response = await fetch('url');
-//
-//         let data = await response.json()
-//
-//         return data
-//
-// }
