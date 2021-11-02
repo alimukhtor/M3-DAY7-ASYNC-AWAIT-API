@@ -8,7 +8,6 @@ let loadUser =()=> {
     const name = data.forEach(element =>
       getBody.innerHTML += `
       <tr>
-        <th scope="row">1</th>
         <td>${element.name}</td>
         <td>${element.username}</td>
         <td>${element.email}</td>
