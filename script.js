@@ -1,3 +1,10 @@
+const tableData =(info)=>`
+<tr>
+  <td>${info.name}</td>
+  <td>${info.username}</td>
+  <td>${info.email}</td>
+  <td>${info.phone}</td>
+</tr>`
 let loadUser =()=> {
   fetch("https://jsonplaceholder.typicode.com/users")
   .then(response => response.json())
@@ -6,17 +13,11 @@ let loadUser =()=> {
     const getBody = document.querySelector(".tbody")
     getBody.innerHTML = ""
     const name = data.forEach(element =>
-      getBody.innerHTML += `
-      <tr>
-        <td>${element.name}</td>
-        <td>${element.username}</td>
-        <td>${element.email}</td>
-        <td>${element.phone}</td>
-      </tr>
-      `)
+      getBody.innerHTML += tableData(element)
 
+    )
   })
 }
-// window.onload =()=> {
-//   loadUser()
-// }
+window.onload =()=> {
+  loadUser()
+}
