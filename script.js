@@ -5,18 +5,16 @@ const tableData =(info)=>`
   <td>${info.email}</td>
   <td>${info.phone}</td>
 </tr>`
-let loadUser =()=> {
-  fetch("https://jsonplaceholder.typicode.com/users")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
+let loadUser = async()=> {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users")
+  const result =  await response.json()
+    console.log(result)
     const getBody = document.querySelector(".tbody")
     getBody.innerHTML = ""
-    const name = data.forEach(element =>
+    const name = result.forEach(element =>
       getBody.innerHTML += tableData(element)
 
     )
-  })
 }
 window.onload =()=> {
   loadUser()
