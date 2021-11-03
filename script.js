@@ -1,18 +1,18 @@
-const tableData =(info)=>`
+const tableData =(element)=>`
 <tr>
-  <td>${info.name}</td>
-  <td>${info.username}</td>
-  <td>${info.email}</td>
-  <td>${info.phone}</td>
+  <td>${element.name}</td>
+  <td>${element.username}</td>
+  <td>${element.email}</td>
+  <td>${element.phone}</td>
 </tr>`
 let loadUser = async()=> {
   const response = await fetch("https://jsonplaceholder.typicode.com/users")
-  const result =  await response.json()
-    console.log(result)
+  const data =  await response.json()
+    console.log(data)
     const getBody = document.querySelector(".tbody")
     getBody.innerHTML = ""
-    const name = result.forEach(element =>
-      getBody.innerHTML += tableData(element)
+    const name = data.forEach(element =>
+    getBody.innerHTML += tableData(element)
 
     )
 }
